@@ -4,9 +4,15 @@ DATABASE FIRST APPROACH
 3. Server Explorer --> add connection - (paste url- database name(
 4. Add scaffold command in package manager console
 
+5. Add the connection url in appsetting.json 
+"ConnectionStrings": {
+    "myCon": "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=DACDb;Integrated Security=True"
+  },
+
+
 Scaffold-DbContext "Name=myCon" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
-5. Add the connection url in appsetting.json 
+
 6. Add  in program.cs
 Using projectname.Models
 
