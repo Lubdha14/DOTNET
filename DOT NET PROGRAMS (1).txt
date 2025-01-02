@@ -1,0 +1,32 @@
+DATABASE FIRST APPROACH 
+1. Create the  Asp.Net core(model and view)proj
+2. Tools - database- copy path url
+3. Server Explorer --> add connection - (paste url- database name(
+4. Add scaffold command in package manager console
+
+Scaffold-DbContext "Name=myCon" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+5. Add the connection url in appsetting.json 
+6. Add  in program.cs
+Using projectname.Models
+
+builder.Services.AddControllersWithViews(); builder.Services.AddDbContext<DACDbContext>(
+                options => options.UseSqlServer("name=myCon")
+                );
+7. BUILD, RUN
+8. add controllers.....
+Add NugetPackages (Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Tools, Microsoft.EntityFramework.Design, Microsoft.EntityFrameworkCore.SqlServer)
+
+
+
+Migration Commands
+Add-Migration InitialMigration
+or 
+dotnet ef migrations add InitialMigration
+
+Update-Database
+
+
+
+
+https://github.com/FISPLLearnings/IETDemos
